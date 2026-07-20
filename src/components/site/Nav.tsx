@@ -1,6 +1,5 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 
 export function Nav() {
@@ -8,7 +7,7 @@ export function Nav() {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => setScrolled(window.scrollY > 10);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -20,17 +19,13 @@ export function Nav() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        scrolled ? "py-0 sm:py-3" : "py-4 sm:py-6"
+      className={`fixed inset-x-0 top-0 z-[100] flex h-16 w-full items-center transition-all duration-300 ${
+        scrolled
+          ? "bg-background/95 backdrop-blur-md border-b border-border/45 shadow-sm"
+          : "bg-transparent"
       }`}
     >
-      <div
-        className={`relative mx-auto flex max-w-7xl items-center justify-between px-6 transition-all duration-500 sm:px-10 ${
-          scrolled
-            ? "bg-background/95 backdrop-blur-md border-b border-border/40 py-4 shadow-sm w-full sm:glass sm:rounded-full sm:py-3 sm:shadow-[0_1px_20px_-8px_rgba(0,0,0,0.08)] sm:w-[calc(100%-2rem)] sm:border-none"
-            : "w-full bg-transparent"
-        }`}
-      >
+      <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 sm:px-10">
         <Link
           to="/"
           className="font-serif text-lg tracking-tight text-foreground"
@@ -63,12 +58,20 @@ export function Nav() {
 
         {/* Mobile Hamburger Button */}
         <button
-          className="relative z-50 flex h-10 w-10 items-center justify-center rounded-full p-2 text-foreground transition-colors hover:bg-secondary/40 md:hidden"
+          className="relative z-[110] flex h-10 w-10 items-center justify-center rounded-full p-2 text-foreground transition-colors hover:bg-secondary/40 md:hidden"
           onClick={() => setIsOpen(!isOpen)}
           aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
           aria-expanded={isOpen}
         >
-          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          {isOpen ? (
+            <svg className="h-6 w-6 stroke-current" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          ) : (
+            <svg className="h-6 w-6 stroke-current" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          )}
         </button>
 
         {/* Mobile Dropdown Menu */}
@@ -78,8 +81,8 @@ export function Nav() {
               initial={{ opacity: 0, y: -16, scale: 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -16, scale: 0.98 }}
-              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              className="absolute inset-x-0 top-full mt-3 bg-background rounded-3xl p-6 shadow-[0_20px_50px_rgba(0,0,0,0.12)] md:hidden z-50 border border-border/60"
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="absolute inset-x-0 top-full mx-4 mt-2 bg-background rounded-2xl p-6 shadow-xl md:hidden z-[90] border border-border/80"
             >
               <nav className="flex flex-col gap-5 text-lg font-serif tracking-wide text-foreground">
                 <a
@@ -118,4 +121,5 @@ export function Nav() {
     </header>
   );
 }
+
 
