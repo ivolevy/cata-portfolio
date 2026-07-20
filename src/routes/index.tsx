@@ -77,23 +77,23 @@ function Hero() {
   return (
     <section
       ref={ref}
-      className="relative flex min-h-screen items-center overflow-hidden bg-beige-soft pt-28 sm:pt-32 lg:items-end"
+      className="relative flex min-h-screen items-center bg-beige-soft pt-28 sm:pt-32 lg:items-end"
     >
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <div className="absolute -left-32 top-1/3 h-[520px] w-[520px] rounded-full bg-sage-soft blur-3xl opacity-70" />
         <div className="absolute -right-24 top-10 h-[360px] w-[360px] rounded-full bg-beige blur-3xl opacity-60" />
+      </div>
 
-        {/* Adorable Smiling French Bulldog Line Art (Profile) - positioned at the bottom left */}
-        <div
-          className="absolute left-[-30px] bottom-[-40px] sm:left-0 sm:bottom-0 h-[220px] w-[220px] pointer-events-none select-none sm:h-[300px] sm:w-[300px] md:h-[380px] md:w-[380px] lg:h-[450px] lg:w-[450px]"
-          style={{ opacity: 0.35 }}
-        >
-          <img
-            src="/bulldog_lineart.png"
-            alt="Adorable Smiling French Bulldog Profile"
-            className="h-full w-full object-contain"
-          />
-        </div>
+      {/* Adorable Smiling French Bulldog Line Art (Profile) - positioned at the bottom left, overlapping next section */}
+      <div
+        className="absolute left-[-30px] bottom-[-80px] sm:left-0 sm:bottom-[-100px] md:bottom-[-140px] lg:bottom-[-180px] h-[220px] w-[220px] pointer-events-none select-none sm:h-[300px] sm:w-[300px] md:h-[380px] md:w-[380px] lg:h-[450px] lg:w-[450px] z-20"
+        style={{ opacity: 0.35 }}
+      >
+        <img
+          src="/bulldog_lineart.png"
+          alt="Adorable Smiling French Bulldog Profile"
+          className="h-full w-full object-contain"
+        />
       </div>
 
       <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-6 pb-16 sm:px-10 md:pb-24 lg:grid-cols-12 lg:gap-16">
