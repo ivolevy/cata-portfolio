@@ -90,8 +90,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Catalina Wauthier - Portfolio" },
       { name: "twitter:description", content: "Estudiante de Organización de Eventos." },
-      { property: "og:image", content: "https://catalinawauthier-portfolio.vercel.app/preview.jpg" },
-      { name: "twitter:image", content: "https://catalinawauthier-portfolio.vercel.app/preview.jpg" },
+      { property: "og:image", content: "https://catalinawauthier-portfolio.vercel.app/preview.png" },
+      { name: "twitter:image", content: "https://catalinawauthier-portfolio.vercel.app/preview.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
