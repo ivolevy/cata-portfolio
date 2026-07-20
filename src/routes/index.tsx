@@ -88,11 +88,10 @@ function Hero() {
           className="absolute left-0 bottom-0 h-[220px] w-[220px] pointer-events-none select-none sm:h-[300px] sm:w-[300px] md:h-[380px] md:w-[380px] lg:h-[450px] lg:w-[450px]"
           style={{ opacity: 0.35 }}
         >
-          <div className="absolute inset-4 rounded-full bg-sage-soft/75 blur-[40px] sm:blur-[60px] md:blur-[80px]" />
           <img
             src="/bulldog_lineart.png"
             alt="Adorable Smiling French Bulldog Profile"
-            className="relative z-10 h-full w-full object-contain"
+            className="h-full w-full object-contain"
           />
         </div>
       </div>
@@ -306,16 +305,16 @@ function ProjectCard({ project, index }: { project: typeof projects[number]; ind
 function Profile() {
   return (
     <section id="perfil" className="relative bg-beige-soft/60 py-28 sm:py-40">
-      {/* Decorative puppy line art in the top right */}
+      {/* Decorative puppy line art in the top right with background blur */}
+      <div className="absolute right-[-100px] top-[-50px] h-[350px] w-[350px] sm:h-[450px] sm:w-[450px] rounded-full bg-sage-soft/35 blur-[80px] sm:blur-[120px] pointer-events-none select-none z-0" />
       <div 
         className="absolute right-0 top-10 h-[220px] w-[220px] pointer-events-none select-none sm:h-[300px] sm:w-[300px] md:h-[380px] md:w-[380px] lg:h-[450px] lg:w-[450px]"
         style={{ opacity: 0.25 }}
       >
-        <div className="absolute inset-4 rounded-full bg-sage-soft/75 blur-[40px] sm:blur-[60px] md:blur-[80px]" />
         <img
           src="/puppy_lineart.png"
           alt="Adorable Puppy Line Art Profile"
-          className="relative z-10 h-full w-full object-contain"
+          className="h-full w-full object-contain"
         />
       </div>
 
@@ -432,15 +431,15 @@ function Profile() {
         </div>
 
         {/* Decorative dog with crown line art in the bottom left - placed at the end of the stacking context to overlay card backgrounds */}
+        <div className="absolute left-[-150px] bottom-[-260px] sm:bottom-[-290px] md:bottom-[-350px] lg:bottom-[-420px] h-[350px] w-[350px] sm:h-[450px] sm:w-[450px] rounded-full bg-sage-soft/25 blur-[80px] sm:blur-[120px] pointer-events-none select-none z-10" />
         <div 
           className="absolute left-[-60px] sm:left-[-100px] md:left-[-120px] lg:left-[-150px] bottom-[-200px] sm:bottom-[-220px] md:bottom-[-270px] lg:bottom-[-340px] h-[220px] w-[220px] pointer-events-none select-none sm:h-[300px] sm:w-[300px] md:h-[380px] md:w-[380px] lg:h-[450px] lg:w-[450px] z-30"
           style={{ opacity: 0.15 }}
         >
-          <div className="absolute inset-4 rounded-full bg-sage-soft/75 blur-[40px] sm:blur-[60px] md:blur-[80px]" />
           <img
             src="/dog_crown_lineart.png"
             alt="Adorable Dog with Crown Line Art Profile"
-            className="relative z-10 h-full w-full object-contain"
+            className="h-full w-full object-contain"
           />
         </div>
       </div>
@@ -451,29 +450,29 @@ function Profile() {
 function Contact() {
   return (
     <section id="contacto" className="relative py-28 sm:py-40">
-      {/* Decorative cat line art in the top left */}
+      {/* Decorative cat line art in the top left with background blur */}
+      <div className="absolute left-[-120px] top-[-80px] h-[300px] w-[300px] sm:h-[400px] sm:w-[400px] rounded-full bg-sage-soft/25 blur-[80px] sm:blur-[120px] pointer-events-none select-none z-0" />
       <div 
         className="absolute left-[-20px] sm:left-[-40px] top-10 h-[200px] w-[200px] pointer-events-none select-none sm:h-[260px] sm:w-[260px] md:h-[320px] md:w-[320px] lg:h-[380px] lg:w-[380px] z-10"
         style={{ opacity: 0.15 }}
       >
-        <div className="absolute inset-4 rounded-full bg-sage-soft/75 blur-[40px] sm:blur-[60px] md:blur-[80px]" />
         <img
           src="/cat_spot_lineart.png"
           alt="Adorable Cat with Spot Line Art"
-          className="relative z-10 h-full w-full object-contain"
+          className="h-full w-full object-contain"
         />
       </div>
 
-      {/* Decorative cat with yellow eyes line art in the top right */}
+      {/* Decorative cat with yellow eyes line art in the top right with background blur */}
+      <div className="absolute right-[-120px] top-[-160px] sm:top-[-200px] md:top-[-240px] lg:top-[-280px] h-[300px] w-[300px] sm:h-[400px] sm:w-[400px] rounded-full bg-sage-soft/25 blur-[80px] sm:blur-[120px] pointer-events-none select-none z-0" />
       <div 
         className="absolute right-[-20px] sm:right-[-40px] top-[-100px] sm:top-[-140px] md:top-[-180px] lg:top-[-220px] h-[200px] w-[200px] pointer-events-none select-none sm:h-[260px] sm:w-[260px] md:h-[320px] md:w-[320px] lg:h-[380px] lg:w-[380px] z-10"
         style={{ opacity: 0.15 }}
       >
-        <div className="absolute inset-4 rounded-full bg-sage-soft/75 blur-[40px] sm:blur-[60px] md:blur-[80px]" />
         <img
           src="/cat_yellow_eyes_lineart.png"
           alt="Adorable Cat with Yellow Eyes Line Art"
-          className="relative z-10 h-full w-full object-contain"
+          className="h-full w-full object-contain"
         />
       </div>
 
