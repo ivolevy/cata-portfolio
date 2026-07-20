@@ -509,9 +509,9 @@ function Footer() {
     <footer className="border-t border-border/70 py-10">
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-6 text-xs text-muted-foreground sm:px-10">
         <p className="font-serif text-base text-foreground">
-          Catalina<span className="text-sage">.</span>
+          Maria Catalina Wauthier Asurabarrena
         </p>
-        <p>© {new Date().getFullYear()} — Diseñado con cuidado.</p>
+        <p>2026 ©</p>
       </div>
     </footer>
   );
