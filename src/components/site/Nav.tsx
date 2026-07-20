@@ -110,7 +110,7 @@ export function Nav() {
                 <a
                   href="/#contacto"
                   onClick={handleLinkClick}
-                  className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-4 py-2 text-xs font-medium tracking-wide text-background transition-all hover:opacity-90 w-fit self-start font-sans"
+                  className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium tracking-wide text-background transition-all hover:opacity-90 w-fit self-start font-sans"
                 >
                   Hablemos
                 </a>
