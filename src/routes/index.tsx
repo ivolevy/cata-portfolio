@@ -86,7 +86,7 @@ function Hero() {
 
       {/* Adorable Smiling French Bulldog Line Art (Profile) - positioned at the bottom left, overlapping next section */}
       <div
-        className="absolute left-[-30px] bottom-[-80px] sm:left-0 sm:bottom-[-100px] md:bottom-[-140px] lg:bottom-[-180px] h-[220px] w-[220px] pointer-events-none select-none sm:h-[300px] sm:w-[300px] md:h-[380px] md:w-[380px] lg:h-[450px] lg:w-[450px] z-20"
+        className="absolute left-[-20px] bottom-[-30px] sm:left-0 sm:bottom-[-40px] md:bottom-[-60px] lg:bottom-[-80px] h-[160px] w-[160px] pointer-events-none select-none sm:h-[220px] sm:w-[220px] md:h-[280px] md:w-[280px] lg:h-[340px] lg:w-[340px] z-20"
         style={{ opacity: 0.35 }}
       >
         <img
@@ -279,17 +279,7 @@ function ProjectCard({ project, index }: { project: typeof projects[number]; ind
               </p>
             </div>
 
-            <div className="flex flex-wrap items-center justify-between gap-4">
-              <div className="flex flex-wrap gap-2">
-                {project.tools.slice(0, 3).map((t) => (
-                  <span
-                    key={t}
-                    className="rounded-full border border-border bg-secondary/70 px-3 py-1 text-xs text-muted-foreground"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
+            <div className="flex items-center justify-end gap-4">
               <span className="inline-flex items-center gap-2 text-sm font-medium text-foreground">
                 Ver proyecto
                 <ArrowUpRight className="h-4 w-4 transition-transform duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
@@ -308,7 +298,7 @@ function Profile() {
       {/* Decorative puppy line art in the top right with background blur */}
       <div className="absolute right-[-100px] top-[-50px] h-[350px] w-[350px] sm:h-[450px] sm:w-[450px] rounded-full bg-sage-soft/15 blur-[80px] sm:blur-[120px] pointer-events-none select-none z-0" />
       <div 
-        className="absolute right-0 top-10 h-[220px] w-[220px] pointer-events-none select-none sm:h-[300px] sm:w-[300px] md:h-[380px] md:w-[380px] lg:h-[450px] lg:w-[450px]"
+        className="absolute right-0 top-10 h-[160px] w-[160px] pointer-events-none select-none sm:h-[220px] sm:w-[220px] md:h-[280px] md:w-[280px] lg:h-[340px] lg:w-[340px]"
         style={{ opacity: 0.25 }}
       >
         <img
@@ -431,9 +421,9 @@ function Profile() {
         </div>
 
         {/* Decorative dog with crown line art in the bottom left - placed at the end of the stacking context to overlay card backgrounds */}
-        <div className="absolute left-[-150px] bottom-[-260px] sm:bottom-[-290px] md:bottom-[-350px] lg:bottom-[-420px] h-[350px] w-[350px] sm:h-[450px] sm:w-[450px] rounded-full bg-sage-soft/10 blur-[80px] sm:blur-[120px] pointer-events-none select-none z-10" />
+        <div className="absolute left-[-150px] bottom-[-300px] sm:bottom-[-330px] md:bottom-[-390px] lg:bottom-[-470px] h-[350px] w-[350px] sm:h-[450px] sm:w-[450px] rounded-full bg-sage-soft/10 blur-[80px] sm:blur-[120px] pointer-events-none select-none z-10" />
         <div 
-          className="absolute left-[-60px] sm:left-[-100px] md:left-[-120px] lg:left-[-150px] bottom-[-200px] sm:bottom-[-220px] md:bottom-[-270px] lg:bottom-[-340px] h-[220px] w-[220px] pointer-events-none select-none sm:h-[300px] sm:w-[300px] md:h-[380px] md:w-[380px] lg:h-[450px] lg:w-[450px] z-30"
+          className="absolute left-[-40px] sm:left-[-70px] md:left-[-90px] lg:left-[-110px] bottom-[-180px] sm:bottom-[-200px] md:bottom-[-240px] lg:bottom-[-300px] h-[160px] w-[160px] pointer-events-none select-none sm:h-[220px] sm:w-[220px] md:h-[280px] md:w-[280px] lg:h-[340px] lg:w-[340px] z-30"
           style={{ opacity: 0.15 }}
         >
           <img
@@ -453,12 +443,12 @@ function Contact() {
       {/* Decorative cat line art in the top left with background blur */}
       <div className="absolute left-[-120px] top-[-80px] h-[300px] w-[300px] sm:h-[400px] sm:w-[400px] rounded-full bg-sage-soft/10 blur-[80px] sm:blur-[120px] pointer-events-none select-none z-0" />
       <div 
-        className="absolute left-[-20px] sm:left-[-40px] top-10 h-[200px] w-[200px] pointer-events-none select-none sm:h-[260px] sm:w-[260px] md:h-[320px] md:w-[320px] lg:h-[380px] lg:w-[380px] z-10"
+        className="absolute left-[-10px] sm:left-[-5px] md:left-0 lg:left-2 top-10 h-[140px] w-[140px] pointer-events-none select-none sm:h-[180px] sm:w-[180px] md:h-[230px] md:w-[230px] lg:h-[280px] lg:w-[280px] z-10"
         style={{ opacity: 0.15 }}
       >
         <img
-          src="/cat_spot_lineart.png"
-          alt="Adorable Cat with Spot Line Art"
+          src="/cat_profile_spot.png?v=3"
+          alt="Adorable Cat Profile Line Art with Spot"
           className="h-full w-full object-contain"
         />
       </div>
@@ -466,12 +456,12 @@ function Contact() {
       {/* Decorative cat with yellow eyes line art in the top right with background blur */}
       <div className="absolute right-[-120px] top-[-160px] sm:top-[-200px] md:top-[-240px] lg:top-[-280px] h-[300px] w-[300px] sm:h-[400px] sm:w-[400px] rounded-full bg-sage-soft/10 blur-[80px] sm:blur-[120px] pointer-events-none select-none z-0" />
       <div 
-        className="absolute right-[-20px] sm:right-[-40px] top-[-100px] sm:top-[-140px] md:top-[-180px] lg:top-[-220px] h-[200px] w-[200px] pointer-events-none select-none sm:h-[260px] sm:w-[260px] md:h-[320px] md:w-[320px] lg:h-[380px] lg:w-[380px] z-10"
+        className="absolute right-[-10px] sm:right-[-5px] md:right-0 lg:right-2 top-[-70px] sm:top-[-90px] md:top-[-120px] lg:top-[-150px] h-[140px] w-[140px] pointer-events-none select-none sm:h-[180px] sm:w-[180px] md:h-[230px] md:w-[230px] lg:h-[280px] lg:w-[280px] z-10"
         style={{ opacity: 0.15 }}
       >
         <img
-          src="/cat_yellow_eyes_lineart.png"
-          alt="Adorable Cat with Yellow Eyes Line Art"
+          src="/cat_profile_yellow_eyes.png?v=3"
+          alt="Adorable Cat Profile Line Art with Yellow Eyes"
           className="h-full w-full object-contain"
         />
       </div>
