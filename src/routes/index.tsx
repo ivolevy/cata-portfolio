@@ -45,7 +45,7 @@ const formacion = [
   {
     school: "Universidad de Palermo",
     period: "2026 – Actualidad",
-    detail: "Tecnicatura en Organización de Eventos",
+    detail: "Licenciatura en Organización de Eventos",
   },
   {
     school: "Escuela Secundaria N.º 4 \"Leandro N. Alem\"",
