@@ -21,14 +21,14 @@ export function Nav() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        scrolled ? "py-0 sm:py-3" : "py-0 sm:py-6"
+        scrolled ? "py-0 sm:py-3" : "py-4 sm:py-6"
       }`}
     >
       <div
         className={`relative mx-auto flex max-w-7xl items-center justify-between px-6 transition-all duration-500 sm:px-10 ${
           scrolled
             ? "bg-background/95 backdrop-blur-md border-b border-border/40 py-4 shadow-sm w-full sm:glass sm:rounded-full sm:py-3 sm:shadow-[0_1px_20px_-8px_rgba(0,0,0,0.08)] sm:w-[calc(100%-2rem)] sm:border-none"
-            : "bg-background border-b border-border/40 py-4 w-full sm:bg-transparent sm:border-none sm:py-0"
+            : "w-full bg-transparent"
         }`}
       >
         <Link
@@ -63,12 +63,12 @@ export function Nav() {
 
         {/* Mobile Hamburger Button */}
         <button
-          className="flex items-center justify-center rounded-full p-2 text-foreground transition-colors hover:bg-secondary/40 md:hidden"
+          className="relative z-50 flex h-10 w-10 items-center justify-center rounded-full p-2 text-foreground transition-colors hover:bg-secondary/40 md:hidden"
           onClick={() => setIsOpen(!isOpen)}
           aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
           aria-expanded={isOpen}
         >
-          {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
 
         {/* Mobile Dropdown Menu */}
