@@ -447,7 +447,7 @@ function Profile() {
 
 function Contact() {
   return (
-    <section id="contacto" className="relative py-28 sm:py-40 overflow-hidden">
+    <section id="contacto" className="relative py-28 sm:py-40">
       {/* Decorative cat line art in the top left */}
       <div 
         className="absolute left-[-20px] sm:left-[-40px] top-10 h-[200px] w-[200px] pointer-events-none select-none sm:h-[260px] sm:w-[260px] md:h-[320px] md:w-[320px] lg:h-[380px] lg:w-[380px] z-10"
@@ -462,7 +462,7 @@ function Contact() {
 
       {/* Decorative cat with yellow eyes line art in the top right */}
       <div 
-        className="absolute right-[-20px] sm:right-[-40px] top-10 h-[200px] w-[200px] pointer-events-none select-none sm:h-[260px] sm:w-[260px] md:h-[320px] md:w-[320px] lg:h-[380px] lg:w-[380px] z-10"
+        className="absolute right-[-20px] sm:right-[-40px] top-[-100px] sm:top-[-140px] md:top-[-180px] lg:top-[-220px] h-[200px] w-[200px] pointer-events-none select-none sm:h-[260px] sm:w-[260px] md:h-[320px] md:w-[320px] lg:h-[380px] lg:w-[380px] z-10"
         style={{ opacity: 0.15 }}
       >
         <img
