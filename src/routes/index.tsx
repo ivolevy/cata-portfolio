@@ -56,7 +56,7 @@ const formacion = [
 
 function Index() {
   return (
-    <main className="relative bg-background text-foreground">
+    <main className="relative overflow-x-hidden bg-background text-foreground">
       <Nav />
       <Hero />
       <Profile />

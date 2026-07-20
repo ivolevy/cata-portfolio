@@ -21,14 +21,14 @@ export function Nav() {
     <header
       className={`fixed inset-x-0 top-0 z-[100] flex h-16 w-full items-center transition-all duration-300 ${
         scrolled
-          ? "bg-background/95 backdrop-blur-md border-b border-border/45 shadow-sm"
+          ? "bg-[#F7F4F0] border-b border-[#E5E2DD] shadow-sm"
           : "bg-transparent"
       }`}
     >
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 sm:px-10">
         <Link
           to="/"
-          className="font-serif text-lg tracking-tight text-foreground"
+          className="font-serif text-lg tracking-tight text-[#1A1A1A]"
           aria-label="Catalina — Inicio"
           onClick={handleLinkClick}
         >
@@ -58,17 +58,17 @@ export function Nav() {
 
         {/* Mobile Hamburger Button */}
         <button
-          className="relative z-[110] flex h-10 w-10 items-center justify-center rounded-full p-2 text-foreground transition-colors hover:bg-secondary/40 md:hidden"
+          className="relative z-[110] flex h-10 w-10 items-center justify-center rounded-full p-2 text-[#1A1A1A] transition-colors hover:bg-secondary/40 md:hidden"
           onClick={() => setIsOpen(!isOpen)}
           aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
           aria-expanded={isOpen}
         >
           {isOpen ? (
-            <svg className="h-6 w-6 stroke-current" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="#1A1A1A" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
           ) : (
-            <svg className="h-6 w-6 stroke-current" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="#1A1A1A" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           )}
@@ -82,9 +82,9 @@ export function Nav() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -16, scale: 0.98 }}
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="absolute inset-x-0 top-full mx-4 mt-2 bg-background rounded-2xl p-6 shadow-xl md:hidden z-[90] border border-border/80"
+              className="absolute inset-x-0 top-full mx-4 mt-2 bg-[#F7F4F0] rounded-2xl p-6 shadow-xl md:hidden z-[90] border border-[#E5E2DD]"
             >
-              <nav className="flex flex-col gap-5 text-lg font-serif tracking-wide text-foreground">
+              <nav className="flex flex-col gap-5 text-lg font-serif tracking-wide text-[#1A1A1A]">
                 <a
                   href="/#perfil"
                   onClick={handleLinkClick}
