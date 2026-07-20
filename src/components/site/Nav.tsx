@@ -21,7 +21,7 @@ export function Nav() {
     <header
       style={{ position: "fixed", zIndex: 1000 }}
       className={`inset-x-0 top-0 flex h-16 w-full items-center transition-all duration-300 ${
-        scrolled
+        scrolled || isOpen
           ? "bg-[#F7F4F0] border-b border-[#E5E2DD] shadow-sm"
           : "bg-transparent"
       }`}
@@ -79,11 +79,11 @@ export function Nav() {
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              initial={{ opacity: 0, y: -16, scale: 0.98 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -16, scale: 0.98 }}
+              initial={{ opacity: 0, y: -16 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -16 }}
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="absolute inset-x-0 top-full mx-4 mt-2 bg-[#F7F4F0] rounded-2xl p-6 shadow-xl md:hidden z-[90] border border-[#E5E2DD]"
+              className="absolute inset-x-0 top-full bg-[#F7F4F0] px-6 py-8 shadow-xl md:hidden z-[90] border-b border-[#E5E2DD]"
             >
               <nav className="flex flex-col gap-5 text-lg font-serif tracking-wide text-[#1A1A1A]">
                 <a
