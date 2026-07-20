@@ -306,7 +306,7 @@ function Profile() {
   return (
     <section id="perfil" className="relative bg-beige-soft/60 py-28 sm:py-40">
       {/* Decorative puppy line art in the top right with background blur */}
-      <div className="absolute right-[-100px] top-[-50px] h-[350px] w-[350px] sm:h-[450px] sm:w-[450px] rounded-full bg-sage-soft/35 blur-[80px] sm:blur-[120px] pointer-events-none select-none z-0" />
+      <div className="absolute right-[-100px] top-[-50px] h-[350px] w-[350px] sm:h-[450px] sm:w-[450px] rounded-full bg-sage-soft/15 blur-[80px] sm:blur-[120px] pointer-events-none select-none z-0" />
       <div 
         className="absolute right-0 top-10 h-[220px] w-[220px] pointer-events-none select-none sm:h-[300px] sm:w-[300px] md:h-[380px] md:w-[380px] lg:h-[450px] lg:w-[450px]"
         style={{ opacity: 0.25 }}
@@ -431,7 +431,7 @@ function Profile() {
         </div>
 
         {/* Decorative dog with crown line art in the bottom left - placed at the end of the stacking context to overlay card backgrounds */}
-        <div className="absolute left-[-150px] bottom-[-260px] sm:bottom-[-290px] md:bottom-[-350px] lg:bottom-[-420px] h-[350px] w-[350px] sm:h-[450px] sm:w-[450px] rounded-full bg-sage-soft/25 blur-[80px] sm:blur-[120px] pointer-events-none select-none z-10" />
+        <div className="absolute left-[-150px] bottom-[-260px] sm:bottom-[-290px] md:bottom-[-350px] lg:bottom-[-420px] h-[350px] w-[350px] sm:h-[450px] sm:w-[450px] rounded-full bg-sage-soft/10 blur-[80px] sm:blur-[120px] pointer-events-none select-none z-10" />
         <div 
           className="absolute left-[-60px] sm:left-[-100px] md:left-[-120px] lg:left-[-150px] bottom-[-200px] sm:bottom-[-220px] md:bottom-[-270px] lg:bottom-[-340px] h-[220px] w-[220px] pointer-events-none select-none sm:h-[300px] sm:w-[300px] md:h-[380px] md:w-[380px] lg:h-[450px] lg:w-[450px] z-30"
           style={{ opacity: 0.15 }}
@@ -451,7 +451,7 @@ function Contact() {
   return (
     <section id="contacto" className="relative py-28 sm:py-40">
       {/* Decorative cat line art in the top left with background blur */}
-      <div className="absolute left-[-120px] top-[-80px] h-[300px] w-[300px] sm:h-[400px] sm:w-[400px] rounded-full bg-sage-soft/25 blur-[80px] sm:blur-[120px] pointer-events-none select-none z-0" />
+      <div className="absolute left-[-120px] top-[-80px] h-[300px] w-[300px] sm:h-[400px] sm:w-[400px] rounded-full bg-sage-soft/10 blur-[80px] sm:blur-[120px] pointer-events-none select-none z-0" />
       <div 
         className="absolute left-[-20px] sm:left-[-40px] top-10 h-[200px] w-[200px] pointer-events-none select-none sm:h-[260px] sm:w-[260px] md:h-[320px] md:w-[320px] lg:h-[380px] lg:w-[380px] z-10"
         style={{ opacity: 0.15 }}
@@ -464,7 +464,7 @@ function Contact() {
       </div>
 
       {/* Decorative cat with yellow eyes line art in the top right with background blur */}
-      <div className="absolute right-[-120px] top-[-160px] sm:top-[-200px] md:top-[-240px] lg:top-[-280px] h-[300px] w-[300px] sm:h-[400px] sm:w-[400px] rounded-full bg-sage-soft/25 blur-[80px] sm:blur-[120px] pointer-events-none select-none z-0" />
+      <div className="absolute right-[-120px] top-[-160px] sm:top-[-200px] md:top-[-240px] lg:top-[-280px] h-[300px] w-[300px] sm:h-[400px] sm:w-[400px] rounded-full bg-sage-soft/10 blur-[80px] sm:blur-[120px] pointer-events-none select-none z-0" />
       <div 
         className="absolute right-[-20px] sm:right-[-40px] top-[-100px] sm:top-[-140px] md:top-[-180px] lg:top-[-220px] h-[200px] w-[200px] pointer-events-none select-none sm:h-[260px] sm:w-[260px] md:h-[320px] md:w-[320px] lg:h-[380px] lg:w-[380px] z-10"
         style={{ opacity: 0.15 }}
