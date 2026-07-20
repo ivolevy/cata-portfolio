@@ -130,6 +130,24 @@ function ProjectPage() {
                       ))}
                     </dd>
                   </div>
+                  {project.videoUrl && (
+                    <div className="border-t border-border/60 pt-4">
+                      <dt className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+                        Video
+                      </dt>
+                      <dd className="mt-2">
+                        <a
+                          href={project.videoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 rounded-full bg-foreground px-4 py-2 text-xs font-medium text-background transition-all hover:opacity-90"
+                        >
+                          Ver video emotivo
+                          <ArrowUpRight className="h-3.5 w-3.5" />
+                        </a>
+                      </dd>
+                    </div>
+                  )}
                 </dl>
               </Reveal>
             </div>

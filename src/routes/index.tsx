@@ -298,7 +298,7 @@ function Profile() {
       {/* Decorative puppy line art in the top right with background blur */}
       <div className="absolute right-[-100px] top-[-50px] h-[350px] w-[350px] sm:h-[450px] sm:w-[450px] rounded-full bg-sage-soft/15 blur-[80px] sm:blur-[120px] pointer-events-none select-none z-0" />
       <div
-        className="absolute right-0 top-10 h-[160px] w-[160px] pointer-events-none select-none sm:h-[220px] sm:w-[220px] md:h-[280px] md:w-[280px] lg:h-[340px] lg:w-[340px]"
+        className="absolute right-0 top-10 lg:top-28 h-[160px] w-[160px] pointer-events-none select-none sm:h-[220px] sm:w-[220px] md:h-[280px] md:w-[280px] lg:h-[340px] lg:w-[340px]"
         style={{ opacity: 0.25 }}
       >
         <img

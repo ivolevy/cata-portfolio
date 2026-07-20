@@ -4,8 +4,16 @@ import sorsoImg1 from "@/assets/sorso/WhatsApp Image 2026-07-19 at 23.43.55.jpeg
 import sorsoImg2 from "@/assets/sorso/WhatsApp Image 2026-07-19 at 23.43.55 (1).jpeg";
 import sorsoImg3 from "@/assets/sorso/WhatsApp Image 2026-07-19 at 23.43.56.jpeg";
 import sorsoImg4 from "@/assets/sorso/WhatsApp Image 2026-07-19 at 23.43.56 (1).jpeg";
-import onImg from "@/assets/project-on.jpg";
-import bodasImg from "@/assets/project-bodas.jpg";
+import onPreview from "@/assets/on/on-preview.png";
+import onImg1 from "@/assets/on/ChatGPT Image 22 jun 2026, 10_23_47 p.m..png";
+import onImg2 from "@/assets/on/ChatGPT Image 22 jun 2026, 10_25_54 p.m..png";
+import onImg3 from "@/assets/on/ChatGPT Image 22 jun 2026, 10_28_22 p.m..png";
+import bodasPreview from "@/assets/bodas/bodas-preview.png";
+import bodasImg1 from "@/assets/bodas/ChatGPT Image 18 jun 2026, 11_55_06 a.m..png";
+import bodasImg2 from "@/assets/bodas/ChatGPT Image 18 jun 2026, 12_00_13 p.m..png";
+import bodasImg3 from "@/assets/bodas/Screen Shot 2026-06-18 at 13.53.13.png";
+import bodasImg4 from "@/assets/bodas/Screen Shot 2026-06-18 at 14.06.00.png";
+import bodasImg5 from "@/assets/bodas/panel2_19x25cm.jpg";
 
 export type Project = {
   slug: string;
@@ -22,6 +30,7 @@ export type Project = {
   results: string[];
   process: { title: string; body: string }[];
   gallery: string[];
+  videoUrl?: string;
 };
 
 export const projects: Project[] = [
@@ -75,7 +84,7 @@ export const projects: Project[] = [
     name: "ON",
     category: "Campaña digital · Estrategia de marca",
     year: "2026",
-    cover: onImg,
+    cover: onPreview,
     short:
       "Análisis integral de un emprendimiento con propuesta de ecommerce y campañas publicitarias trabajadas en equipo.",
     description:
@@ -111,7 +120,7 @@ export const projects: Project[] = [
         body: "Coordiné al equipo, tiempos y entregables para que todo llegara en fecha y sin fricción.",
       },
     ],
-    gallery: [onImg, onImg, onImg],
+    gallery: [onImg1, onImg2, onImg3],
   },
   {
     slug: "organizadora-bodas",
@@ -119,7 +128,7 @@ export const projects: Project[] = [
     name: "Campaña · Organizadora de Bodas",
     category: "Marca personal · Comunicación emocional",
     year: "2026",
-    cover: bodasImg,
+    cover: bodasPreview,
     short:
       "Concepto creativo y comunicación emocional para posicionar a una organizadora de bodas con una identidad clara y cercana.",
     description:
@@ -155,8 +164,10 @@ export const projects: Project[] = [
         body: "Aterrizamos ese concepto en piezas, guías de contenido y momentos clave de la experiencia.",
       },
     ],
-    gallery: [bodasImg, bodasImg, bodasImg],
+    gallery: [bodasImg1, bodasImg2, bodasImg3, bodasImg4, bodasImg5],
+    videoUrl: "https://www.instagram.com/p/DZvjmo4vKe2/",
   },
 ];
 
 export const getProject = (slug: string) => projects.find((p) => p.slug === slug);
+
