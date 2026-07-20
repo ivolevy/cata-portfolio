@@ -156,7 +156,7 @@ function Hero() {
             className="relative mx-auto aspect-[4/5] w-full max-w-[520px]"
             style={{ filter: "drop-shadow(0 25px 50px rgba(60,50,40,0.15))" }}
           >
-            <div 
+            <div
               className="relative h-full w-full overflow-hidden bg-secondary"
               style={{ clipPath: "url(#hero-blob)" }}
             >
@@ -172,15 +172,15 @@ function Hero() {
             </div>
 
             {/* Matching delicate frame overlay */}
-            <svg 
-              viewBox="0 0 1 1" 
+            <svg
+              viewBox="0 0 1 1"
               className="absolute inset-0 h-full w-full pointer-events-none z-20"
               preserveAspectRatio="none"
             >
-              <path 
-                d="M0.5 0.02 C0.85 0.02, 0.92 0.12, 0.88 0.32 C0.84 0.48, 0.94 0.58, 0.92 0.75 C0.9 0.92, 0.72 0.98, 0.5 0.98 C0.28 0.98, 0.1 0.92, 0.08 0.75 C0.06 0.58, 0.16 0.48, 0.12 0.32 C0.08 0.12, 0.15 0.02, 0.5 0.02 Z" 
-                fill="none" 
-                stroke="rgba(255,255,255,0.7)" 
+              <path
+                d="M0.5 0.02 C0.85 0.02, 0.92 0.12, 0.88 0.32 C0.84 0.48, 0.94 0.58, 0.92 0.75 C0.9 0.92, 0.72 0.98, 0.5 0.98 C0.28 0.98, 0.1 0.92, 0.08 0.75 C0.06 0.58, 0.16 0.48, 0.12 0.32 C0.08 0.12, 0.15 0.02, 0.5 0.02 Z"
+                fill="none"
+                stroke="rgba(255,255,255,0.7)"
                 strokeWidth="0.005"
               />
             </svg>
@@ -297,7 +297,7 @@ function Profile() {
     <section id="perfil" className="relative bg-beige-soft/60 py-28 sm:py-40">
       {/* Decorative puppy line art in the top right with background blur */}
       <div className="absolute right-[-100px] top-[-50px] h-[350px] w-[350px] sm:h-[450px] sm:w-[450px] rounded-full bg-sage-soft/15 blur-[80px] sm:blur-[120px] pointer-events-none select-none z-0" />
-      <div 
+      <div
         className="absolute right-0 top-10 h-[160px] w-[160px] pointer-events-none select-none sm:h-[220px] sm:w-[220px] md:h-[280px] md:w-[280px] lg:h-[340px] lg:w-[340px]"
         style={{ opacity: 0.25 }}
       >
@@ -422,7 +422,7 @@ function Profile() {
 
         {/* Decorative dog with crown line art in the bottom left - placed at the end of the stacking context to overlay card backgrounds */}
         <div className="absolute left-[-150px] bottom-[-300px] sm:bottom-[-330px] md:bottom-[-390px] lg:bottom-[-470px] h-[350px] w-[350px] sm:h-[450px] sm:w-[450px] rounded-full bg-sage-soft/10 blur-[80px] sm:blur-[120px] pointer-events-none select-none z-10" />
-        <div 
+        <div
           className="absolute left-[-40px] sm:left-[-70px] md:left-[-90px] lg:left-[-110px] bottom-[-180px] sm:bottom-[-200px] md:bottom-[-240px] lg:bottom-[-300px] h-[160px] w-[160px] pointer-events-none select-none sm:h-[220px] sm:w-[220px] md:h-[280px] md:w-[280px] lg:h-[340px] lg:w-[340px] z-30"
           style={{ opacity: 0.15 }}
         >
@@ -442,7 +442,7 @@ function Contact() {
     <section id="contacto" className="relative py-28 sm:py-40">
       {/* Decorative cat line art in the top left with background blur */}
       <div className="absolute left-[-120px] top-[-80px] h-[300px] w-[300px] sm:h-[400px] sm:w-[400px] rounded-full bg-sage-soft/10 blur-[80px] sm:blur-[120px] pointer-events-none select-none z-0" />
-      <div 
+      <div
         className="absolute left-[-10px] sm:left-[-5px] md:left-0 lg:left-2 top-10 h-[140px] w-[140px] pointer-events-none select-none sm:h-[180px] sm:w-[180px] md:h-[230px] md:w-[230px] lg:h-[280px] lg:w-[280px] z-10"
         style={{ opacity: 0.15 }}
       >
@@ -455,7 +455,7 @@ function Contact() {
 
       {/* Decorative cat with yellow eyes line art in the top right with background blur */}
       <div className="absolute right-[-120px] top-[-160px] sm:top-[-200px] md:top-[-240px] lg:top-[-280px] h-[300px] w-[300px] sm:h-[400px] sm:w-[400px] rounded-full bg-sage-soft/10 blur-[80px] sm:blur-[120px] pointer-events-none select-none z-0" />
-      <div 
+      <div
         className="absolute right-[-10px] sm:right-[-5px] md:right-0 lg:right-2 top-[-70px] sm:top-[-90px] md:top-[-120px] lg:top-[-150px] h-[140px] w-[140px] pointer-events-none select-none sm:h-[180px] sm:w-[180px] md:h-[230px] md:w-[230px] lg:h-[280px] lg:w-[280px] z-10"
         style={{ opacity: 0.15 }}
       >
@@ -509,7 +509,7 @@ function Footer() {
     <footer className="border-t border-border/70 py-10">
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-6 text-xs text-muted-foreground sm:px-10">
         <p className="font-serif text-base text-foreground">
-          Maria Catalina Wauthier Asurabarrena
+          Catalina Wauthier
         </p>
         <p>2026 ©</p>
       </div>
