@@ -77,7 +77,7 @@ function Hero() {
   return (
     <section
       ref={ref}
-      className="relative flex min-h-screen items-end overflow-hidden bg-beige-soft pt-28 sm:pt-32"
+      className="relative flex min-h-screen items-center overflow-hidden bg-beige-soft pt-28 sm:pt-32 lg:items-end"
     >
       <div className="absolute inset-0 z-0">
         <div className="absolute -left-32 top-1/3 h-[520px] w-[520px] rounded-full bg-sage-soft blur-3xl opacity-70" />
@@ -431,7 +431,7 @@ function Profile() {
 
         {/* Decorative dog with crown line art in the bottom left - placed at the end of the stacking context to overlay card backgrounds */}
         <div 
-          className="absolute left-[-60px] sm:left-[-100px] md:left-[-120px] lg:left-[-150px] bottom-[-140px] sm:bottom-[-200px] md:bottom-[-270px] lg:bottom-[-340px] h-[220px] w-[220px] pointer-events-none select-none sm:h-[300px] sm:w-[300px] md:h-[380px] md:w-[380px] lg:h-[450px] lg:w-[450px] z-30"
+          className="absolute left-[-60px] sm:left-[-100px] md:left-[-120px] lg:left-[-150px] bottom-[-200px] sm:bottom-[-220px] md:bottom-[-270px] lg:bottom-[-340px] h-[220px] w-[220px] pointer-events-none select-none sm:h-[300px] sm:w-[300px] md:h-[380px] md:w-[380px] lg:h-[450px] lg:w-[450px] z-30"
           style={{ opacity: 0.15 }}
         >
           <img
@@ -456,6 +456,18 @@ function Contact() {
         <img
           src="/cat_spot_lineart.png"
           alt="Adorable Cat with Spot Line Art"
+          className="h-full w-full object-contain"
+        />
+      </div>
+
+      {/* Decorative cat with yellow eyes line art in the top right */}
+      <div 
+        className="absolute right-[-20px] sm:right-[-40px] top-10 h-[200px] w-[200px] pointer-events-none select-none sm:h-[260px] sm:w-[260px] md:h-[320px] md:w-[320px] lg:h-[380px] lg:w-[380px] z-10"
+        style={{ opacity: 0.15 }}
+      >
+        <img
+          src="/cat_yellow_eyes_lineart.png"
+          alt="Adorable Cat with Yellow Eyes Line Art"
           className="h-full w-full object-contain"
         />
       </div>
