@@ -121,7 +121,7 @@ function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-10 flex flex-wrap items-center gap-3"
+            className="mt-10 hidden flex-wrap items-center gap-3 sm:flex"
           >
             <a
               href="#perfil"
@@ -274,7 +274,7 @@ function ProjectCard({ project, index }: { project: typeof projects[number]; ind
               <h3 className="mt-4 font-serif text-4xl leading-tight tracking-tight sm:text-5xl">
                 {project.name}
               </h3>
-              <p className="mt-5 text-base leading-relaxed text-muted-foreground text-pretty">
+              <p className="mt-5 hidden text-base leading-relaxed text-muted-foreground text-pretty sm:block">
                 {project.short}
               </p>
             </div>

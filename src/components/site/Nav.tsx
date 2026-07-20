@@ -79,7 +79,7 @@ export function Nav() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -16, scale: 0.98 }}
               transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              className="absolute inset-x-0 top-full mt-3 glass rounded-3xl p-6 shadow-[0_20px_50px_rgba(0,0,0,0.12)] md:hidden z-50 border border-border/60"
+              className="absolute inset-x-0 top-full mt-3 bg-background rounded-3xl p-6 shadow-[0_20px_50px_rgba(0,0,0,0.12)] md:hidden z-50 border border-border/60"
             >
               <nav className="flex flex-col gap-5 text-lg font-serif tracking-wide text-foreground">
                 <a
