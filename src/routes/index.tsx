@@ -85,7 +85,7 @@ function Hero() {
 
         {/* Adorable Smiling French Bulldog Line Art (Profile) - positioned at the bottom left */}
         <div
-          className="absolute left-0 bottom-0 h-[220px] w-[220px] pointer-events-none select-none sm:h-[300px] sm:w-[300px] md:h-[380px] md:w-[380px] lg:h-[450px] lg:w-[450px]"
+          className="absolute left-[-30px] bottom-[-40px] sm:left-0 sm:bottom-0 h-[220px] w-[220px] pointer-events-none select-none sm:h-[300px] sm:w-[300px] md:h-[380px] md:w-[380px] lg:h-[450px] lg:w-[450px]"
           style={{ opacity: 0.35 }}
         >
           <img

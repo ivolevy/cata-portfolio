@@ -21,13 +21,13 @@ export function Nav() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        scrolled ? "py-3" : "py-6"
+        scrolled ? "py-0 sm:py-3" : "py-4 sm:py-6"
       }`}
     >
       <div
         className={`relative mx-auto flex max-w-7xl items-center justify-between px-6 transition-all duration-500 sm:px-10 ${
           scrolled
-            ? "glass rounded-full py-3 shadow-[0_1px_20px_-8px_rgba(0,0,0,0.08)] w-[calc(100%-2rem)] sm:w-[calc(100%-4rem)]"
+            ? "bg-background/95 backdrop-blur-md border-b border-border/40 py-4 shadow-sm w-full sm:glass sm:rounded-full sm:py-3 sm:shadow-[0_1px_20px_-8px_rgba(0,0,0,0.08)] sm:w-[calc(100%-2rem)] sm:border-none"
             : "w-full"
         }`}
       >
