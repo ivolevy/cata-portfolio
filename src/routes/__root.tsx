@@ -75,25 +75,23 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Catalina Wauthier - portfolio" },
+      { title: "Catalina Wauthier - Portfolio" },
       {
         name: "description",
-        content:
-          "Portfolio de Catalina Wauthier, estudiante de Organización de Eventos. Diseño de experiencias memorables con foco en la ambientación, el detalle y la emoción.",
+        content: "Estudiante de Organización de Eventos.",
       },
       { name: "author", content: "Catalina Wauthier" },
-      { property: "og:title", content: "Catalina Wauthier - portfolio" },
+      { property: "og:title", content: "Catalina Wauthier - Portfolio" },
       {
         property: "og:description",
-        content:
-          "Portfolio de Catalina Wauthier, estudiante de Organización de Eventos. Diseño de experiencias memorables con foco en la ambientación, el detalle y la emoción.",
+        content: "Estudiante de Organización de Eventos.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Catalina Wauthier - portfolio" },
-      { name: "twitter:description", content: "Portfolio de Catalina Wauthier, estudiante de Organización de Eventos. Diseño de experiencias memorables con foco en la ambientación, el detalle y la emoción." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2516dab5-13ff-4515-ad98-54e14e0f2ba8/id-preview-9ea1e94b--233c56e7-8e82-4599-a96f-731a1dc4dcda.lovable.app-1784477903842.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2516dab5-13ff-4515-ad98-54e14e0f2ba8/id-preview-9ea1e94b--233c56e7-8e82-4599-a96f-731a1dc4dcda.lovable.app-1784477903842.png" },
+      { name: "twitter:title", content: "Catalina Wauthier - Portfolio" },
+      { name: "twitter:description", content: "Estudiante de Organización de Eventos." },
+      { property: "og:image", content: "https://catalinawauthier-portfolio.vercel.app/preview.jpg" },
+      { name: "twitter:image", content: "https://catalinawauthier-portfolio.vercel.app/preview.jpg" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
