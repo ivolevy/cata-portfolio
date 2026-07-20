@@ -19,7 +19,8 @@ export function Nav() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-[100] flex h-16 w-full items-center transition-all duration-300 ${
+      style={{ position: "fixed", zIndex: 1000 }}
+      className={`inset-x-0 top-0 flex h-16 w-full items-center transition-all duration-300 ${
         scrolled
           ? "bg-[#F7F4F0] border-b border-[#E5E2DD] shadow-sm"
           : "bg-transparent"
