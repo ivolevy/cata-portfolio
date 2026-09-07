@@ -56,7 +56,7 @@ const formacion = [
 
 function Index() {
   return (
-    <main className="relative overflow-x-hidden bg-background text-foreground">
+    <main className="relative overflow-x-clip bg-background text-foreground">
       <Nav />
       <Hero />
       <Profile />
@@ -320,102 +320,103 @@ function Profile() {
 function ProfileMobile() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
-  const x = useTransform(scrollYProgress, [0, 1], ["0vw", "-355vw"]);
+  // 4 cards of 85vw + 3 gaps = ~360vw total. Shift to show the last one:
+  const x = useTransform(scrollYProgress, [0, 1], ["0vw", "-275vw"]);
 
   return (
-    <section id="perfil-mobile" ref={ref} className="relative h-[400vh] bg-beige-soft/60">
-      <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
-        
-        {/* Decoraciones */}
-        <div className="absolute right-[-100px] top-[-50px] h-[350px] w-[350px] rounded-full bg-sage-soft/15 blur-[80px] pointer-events-none z-0" />
-        <div className="absolute left-[-150px] bottom-[-100px] h-[350px] w-[350px] rounded-full bg-sage-soft/10 blur-[80px] pointer-events-none z-10" />
-        
-        <div className="mb-10 px-6 relative z-10">
-          <Reveal>
-            <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
-              Perfil profesional
-            </p>
-            <h2 className="mt-4 font-serif text-4xl leading-[1.05] tracking-tight">
-              Formación, herramientas y <span className="italic text-sage">habilidades</span>.
-            </h2>
-          </Reveal>
-        </div>
+    <section id="perfil-mobile" className="relative bg-beige-soft/60 block lg:hidden">
+      {/* Intro Section (Scrolls Normally) */}
+      <div className="pt-28 px-6 pb-10 relative z-10">
+        <Reveal>
+          <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
+            Perfil profesional
+          </p>
+          <h2 className="mt-4 font-serif text-4xl leading-[1.05] tracking-tight">
+            Formación, herramientas y <span className="italic text-sage">habilidades</span>.
+          </h2>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <p className="mt-8 text-base leading-relaxed text-muted-foreground text-pretty">
+            ¡Hola! Soy Cata, tengo 19 años y soy de Vedia, provincia de Buenos Aires. Me mudé a la ciudad para estudiar la Licenciatura en Organización de Eventos en la Universidad de Palermo.
+            <br /><br />
+            Me apasiona la planificación, el diseño y la creación de experiencias que conecten con las personas. Disfruto pensar propuestas donde la estética, la identidad visual y el cuidado de cada detalle transmitan una idea, una emoción o la esencia de una marca.
+            <br /><br />
+            Me considero una persona organizada, creativa, comprometida y con muchas ganas de aprender.
+          </p>
+        </Reveal>
+      </div>
 
-        <motion.div style={{ x }} className="flex gap-4 px-6 w-[450vw] relative z-20 items-stretch">
-          {/* Card 1: Intro */}
-          <div className="w-[85vw] flex-shrink-0">
-            <div className="h-full rounded-3xl border border-border bg-background p-6 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)]">
-              <p className="text-sm leading-relaxed text-muted-foreground text-pretty">
-                ¡Hola! Soy Cata, tengo 19 años y soy de Vedia, provincia de Buenos Aires. Me mudé a la ciudad para estudiar la Licenciatura en Organización de Eventos en la Universidad de Palermo.
-                <br /><br />
-                Me apasiona la planificación, el diseño y la creación de experiencias que conecten con las personas. Disfruto pensar propuestas donde la estética, la identidad visual y el cuidado de cada detalle transmitan una idea, una emoción o la esencia de una marca.
-                <br /><br />
-                Me considero una persona organizada, creativa, comprometida y con muchas ganas de aprender.
-              </p>
-            </div>
-          </div>
+      {/* Scroll-driven Carousel Section */}
+      <div ref={ref} className="relative h-[300vh]">
+        <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden pb-20">
           
-          {/* Card 2: Formacion */}
-          <div className="w-[85vw] flex-shrink-0">
-            <div className="h-full rounded-3xl border border-border bg-background p-6 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)]">
-              <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Formación académica</p>
-              <ul className="mt-6 space-y-6">
-                {formacion.map((f) => (
-                  <li key={f.school} className="border-l border-sage/60 pl-4">
-                    <div>
-                      <h3 className="font-serif text-lg tracking-tight">{f.school}</h3>
-                      <span className="mt-1 block font-mono text-[10px] uppercase tracking-widest text-muted-foreground">{f.period}</span>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+          {/* Decoraciones */}
+          <div className="absolute right-[-100px] top-[-50px] h-[350px] w-[350px] rounded-full bg-sage-soft/15 blur-[80px] pointer-events-none z-0" />
+          <div className="absolute left-[-150px] bottom-[-100px] h-[350px] w-[350px] rounded-full bg-sage-soft/10 blur-[80px] pointer-events-none z-10" />
 
-          {/* Card 3: Idiomas */}
-          <div className="w-[85vw] flex-shrink-0">
-            <div className="h-full rounded-3xl border border-border bg-background p-6 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)]">
-              <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Idiomas</p>
-              <ul className="mt-6 space-y-3">
-                {idiomas.map((i) => (
-                  <li key={i.lang} className="flex items-baseline justify-between border-b border-border/60 pb-3 last:border-0">
-                    <span className="font-serif text-lg">{i.lang}</span>
-                    <span className="text-xs text-muted-foreground">{i.level}</span>
-                  </li>
-                ))}
-              </ul>
+          <motion.div style={{ x }} className="flex gap-4 px-6 w-[360vw] relative z-20 items-stretch">
+            {/* Card 1: Formacion */}
+            <div className="w-[85vw] flex-shrink-0">
+              <div className="h-full rounded-3xl border border-border bg-background p-6 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)]">
+                <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Formación académica</p>
+                <ul className="mt-6 space-y-6">
+                  {formacion.map((f) => (
+                    <li key={f.school} className="border-l border-sage/60 pl-4">
+                      <div>
+                        <h3 className="font-serif text-lg tracking-tight">{f.school}</h3>
+                        <span className="mt-1 block font-mono text-[10px] uppercase tracking-widest text-muted-foreground">{f.period}</span>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-          </div>
 
-          {/* Card 4: Habilidades */}
-          <div className="w-[85vw] flex-shrink-0">
-            <div className="h-full rounded-3xl border border-border bg-background p-6 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)]">
-              <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Habilidades</p>
-              <ul className="mt-6 flex flex-wrap gap-2">
-                {habilidades.map((h) => (
-                  <li key={h} className="rounded-full border border-border bg-secondary/60 px-3 py-1.5 text-xs text-foreground/80">
-                    {h}
-                  </li>
-                ))}
-              </ul>
+            {/* Card 2: Idiomas */}
+            <div className="w-[85vw] flex-shrink-0">
+              <div className="h-full rounded-3xl border border-border bg-background p-6 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)]">
+                <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Idiomas</p>
+                <ul className="mt-6 space-y-3">
+                  {idiomas.map((i) => (
+                    <li key={i.lang} className="flex items-baseline justify-between border-b border-border/60 pb-3 last:border-0">
+                      <span className="font-serif text-lg">{i.lang}</span>
+                      <span className="text-xs text-muted-foreground">{i.level}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-          </div>
 
-          {/* Card 5: Herramientas */}
-          <div className="w-[85vw] flex-shrink-0">
-            <div className="h-full rounded-3xl border border-border bg-background p-6 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)]">
-              <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Herramientas</p>
-              <ul className="mt-6 space-y-3">
-                {herramientas.map((h) => (
-                  <li key={h} className="flex items-center gap-3 font-serif text-base">
-                    <span className="h-1.5 w-1.5 rounded-full bg-sage" />
-                    {h}
-                  </li>
-                ))}
-              </ul>
+            {/* Card 3: Habilidades */}
+            <div className="w-[85vw] flex-shrink-0">
+              <div className="h-full rounded-3xl border border-border bg-background p-6 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)]">
+                <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Habilidades</p>
+                <ul className="mt-6 flex flex-wrap gap-2">
+                  {habilidades.map((h) => (
+                    <li key={h} className="rounded-full border border-border bg-secondary/60 px-3 py-1.5 text-xs text-foreground/80">
+                      {h}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-          </div>
-        </motion.div>
+
+            {/* Card 4: Herramientas */}
+            <div className="w-[85vw] flex-shrink-0">
+              <div className="h-full rounded-3xl border border-border bg-background p-6 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)]">
+                <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Herramientas</p>
+                <ul className="mt-6 space-y-3">
+                  {herramientas.map((h) => (
+                    <li key={h} className="flex items-center gap-3 font-serif text-base">
+                      <span className="h-1.5 w-1.5 rounded-full bg-sage" />
+                      {h}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
