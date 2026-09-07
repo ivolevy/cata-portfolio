@@ -244,13 +244,13 @@ function ProjectCard({ project, index }: { project: typeof projects[number]; ind
   const flip = index % 2 === 1;
   return (
     <Reveal>
-      <Link
-        to="/projects/$slug"
-        params={{ slug: project.slug }}
-        className="group block overflow-hidden rounded-[2rem] border border-border/60 bg-background shadow-[0_20px_60px_-40px_rgba(60,50,40,0.4)] transition-all duration-500 hover:shadow-[0_30px_90px_-40px_rgba(60,50,40,0.5)]"
-      >
+      <div className="group block overflow-hidden rounded-[2rem] border border-border/60 bg-background shadow-[0_20px_60px_-40px_rgba(60,50,40,0.4)] transition-all duration-500 hover:shadow-[0_30px_90px_-40px_rgba(60,50,40,0.5)]">
         <div className={`grid grid-cols-1 lg:grid-cols-12 ${flip ? "lg:[direction:rtl]" : ""}`}>
-          <div className="relative aspect-[4/3] overflow-hidden lg:col-span-7 lg:aspect-[4/3] lg:[direction:ltr]">
+          <Link
+            to="/projects/$slug"
+            params={{ slug: project.slug }}
+            className="relative aspect-[4/3] block overflow-hidden lg:col-span-7 lg:aspect-[4/3] lg:[direction:ltr]"
+          >
             <img
               src={project.cover}
               alt={project.name}
@@ -264,7 +264,7 @@ function ProjectCard({ project, index }: { project: typeof projects[number]; ind
               <span>·</span>
               <span>{project.year}</span>
             </div>
-          </div>
+          </Link>
 
           <div className="flex flex-col justify-between gap-8 p-8 sm:p-12 lg:col-span-5 lg:[direction:ltr]">
             <div>
@@ -272,29 +272,158 @@ function ProjectCard({ project, index }: { project: typeof projects[number]; ind
                 {project.category}
               </p>
               <h3 className="mt-4 font-serif text-4xl leading-tight tracking-tight sm:text-5xl">
-                {project.name}
+                <Link to="/projects/$slug" params={{ slug: project.slug }} className="hover:underline decoration-sage/30 underline-offset-4">
+                  {project.name}
+                </Link>
               </h3>
               <p className="mt-5 hidden text-base leading-relaxed text-muted-foreground text-pretty sm:block">
                 {project.short}
               </p>
             </div>
 
-            <div className="flex items-center justify-end gap-4">
-              <span className="inline-flex items-center gap-2 text-sm font-medium text-foreground">
+            <div className="flex flex-wrap items-center justify-between gap-4 mt-4">
+              <a 
+                href="https://www.instagram.com/portf.catalina_/" 
+                target="_blank" 
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-sage transition-colors"
+              >
+                <Instagram className="h-4 w-4" />
+                <span className="underline decoration-muted-foreground/30 underline-offset-4">Ver más en Instagram</span>
+              </a>
+
+              <Link 
+                to="/projects/$slug" 
+                params={{ slug: project.slug }}
+                className="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-sage transition-colors group/link"
+              >
                 Ver proyecto
-                <ArrowUpRight className="h-4 w-4 transition-transform duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-              </span>
+                <ArrowUpRight className="h-4 w-4 transition-transform duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
+              </Link>
             </div>
           </div>
         </div>
-      </Link>
+      </div>
     </Reveal>
   );
 }
 
 function Profile() {
   return (
-    <section id="perfil" className="relative bg-beige-soft/60 py-28 sm:py-40">
+    <>
+      <div className="hidden lg:block"><ProfileDesktop /></div>
+      <div className="block lg:hidden"><ProfileMobile /></div>
+    </>
+  );
+}
+
+function ProfileMobile() {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
+  const x = useTransform(scrollYProgress, [0, 1], ["0vw", "-355vw"]);
+
+  return (
+    <section id="perfil-mobile" ref={ref} className="relative h-[400vh] bg-beige-soft/60">
+      <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
+        
+        {/* Decoraciones */}
+        <div className="absolute right-[-100px] top-[-50px] h-[350px] w-[350px] rounded-full bg-sage-soft/15 blur-[80px] pointer-events-none z-0" />
+        <div className="absolute left-[-150px] bottom-[-100px] h-[350px] w-[350px] rounded-full bg-sage-soft/10 blur-[80px] pointer-events-none z-10" />
+        
+        <div className="mb-10 px-6 relative z-10">
+          <Reveal>
+            <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
+              Perfil profesional
+            </p>
+            <h2 className="mt-4 font-serif text-4xl leading-[1.05] tracking-tight">
+              Formación, herramientas y <span className="italic text-sage">habilidades</span>.
+            </h2>
+          </Reveal>
+        </div>
+
+        <motion.div style={{ x }} className="flex gap-4 px-6 w-[450vw] relative z-20 items-stretch">
+          {/* Card 1: Intro */}
+          <div className="w-[85vw] flex-shrink-0">
+            <div className="h-full rounded-3xl border border-border bg-background p-6 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)]">
+              <p className="text-sm leading-relaxed text-muted-foreground text-pretty">
+                ¡Hola! Soy Cata, tengo 19 años y soy de Vedia, provincia de Buenos Aires. Me mudé a la ciudad para estudiar la Licenciatura en Organización de Eventos en la Universidad de Palermo.
+                <br /><br />
+                Me apasiona la planificación, el diseño y la creación de experiencias que conecten con las personas. Disfruto pensar propuestas donde la estética, la identidad visual y el cuidado de cada detalle transmitan una idea, una emoción o la esencia de una marca.
+                <br /><br />
+                Me considero una persona organizada, creativa, comprometida y con muchas ganas de aprender.
+              </p>
+            </div>
+          </div>
+          
+          {/* Card 2: Formacion */}
+          <div className="w-[85vw] flex-shrink-0">
+            <div className="h-full rounded-3xl border border-border bg-background p-6 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)]">
+              <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Formación académica</p>
+              <ul className="mt-6 space-y-6">
+                {formacion.map((f) => (
+                  <li key={f.school} className="border-l border-sage/60 pl-4">
+                    <div>
+                      <h3 className="font-serif text-lg tracking-tight">{f.school}</h3>
+                      <span className="mt-1 block font-mono text-[10px] uppercase tracking-widest text-muted-foreground">{f.period}</span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Card 3: Idiomas */}
+          <div className="w-[85vw] flex-shrink-0">
+            <div className="h-full rounded-3xl border border-border bg-background p-6 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)]">
+              <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Idiomas</p>
+              <ul className="mt-6 space-y-3">
+                {idiomas.map((i) => (
+                  <li key={i.lang} className="flex items-baseline justify-between border-b border-border/60 pb-3 last:border-0">
+                    <span className="font-serif text-lg">{i.lang}</span>
+                    <span className="text-xs text-muted-foreground">{i.level}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Card 4: Habilidades */}
+          <div className="w-[85vw] flex-shrink-0">
+            <div className="h-full rounded-3xl border border-border bg-background p-6 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)]">
+              <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Habilidades</p>
+              <ul className="mt-6 flex flex-wrap gap-2">
+                {habilidades.map((h) => (
+                  <li key={h} className="rounded-full border border-border bg-secondary/60 px-3 py-1.5 text-xs text-foreground/80">
+                    {h}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Card 5: Herramientas */}
+          <div className="w-[85vw] flex-shrink-0">
+            <div className="h-full rounded-3xl border border-border bg-background p-6 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)]">
+              <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Herramientas</p>
+              <ul className="mt-6 space-y-3">
+                {herramientas.map((h) => (
+                  <li key={h} className="flex items-center gap-3 font-serif text-base">
+                    <span className="h-1.5 w-1.5 rounded-full bg-sage" />
+                    {h}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+function ProfileDesktop() {
+  return (
+    <section id="perfil-desktop" className="relative bg-beige-soft/60 py-28 sm:py-40">
       {/* Decorative puppy line art in the top right with background blur */}
       <div className="absolute right-[-100px] top-[-50px] h-[350px] w-[350px] sm:h-[450px] sm:w-[450px] rounded-full bg-sage-soft/15 blur-[80px] sm:blur-[120px] pointer-events-none select-none z-0" />
       <div
