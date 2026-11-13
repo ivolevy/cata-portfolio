@@ -32,7 +32,7 @@ const habilidades = [
 
 const herramientas = [
   "Instagram & TikTok",
-  "Meta Business Suite & Insights",
+  "Instagram Insights",
   "CapCut (edición de Reels)",
   "Canva",
   "Notion",

@@ -54,7 +54,7 @@ export const projects: Project[] = [
       "Guionado y edición de Reels en CapCut",
       "Copywriting comercial y atención a clientes por DM",
     ],
-    tools: ["Instagram", "Canva", "CapCut", "Meta Business Suite", "IA (ChatGPT / Gemini)"],
+    tools: ["Instagram", "Canva", "CapCut", "IA (ChatGPT / Gemini)"],
     objectives: [
       "Construir una identidad visual cálida y coherente en el feed",
       "Mostrar productos, usos y promociones de forma clara y atractiva",
@@ -76,7 +76,7 @@ export const projects: Project[] = [
       },
       {
         title: "Comunidad y métricas",
-        body: "Seguimiento diario de mensajes directos y comentarios, y revisión de Insights en Meta Business Suite para ajustar horarios y formatos.",
+        body: "Seguimiento diario de mensajes directos y comentarios, y revisión de Instagram Insights para ajustar horarios y formatos.",
       },
     ],
     gallery: [homeMmFeed, homeMmDetail, homeMmTable],
