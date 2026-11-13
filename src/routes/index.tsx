@@ -22,19 +22,22 @@ export const Route = createFileRoute("/")({
 });
 
 const habilidades = [
-  "Organización y planificación de eventos",
-  "Comunicación interpersonal",
-  "Creatividad",
+  "Gestión de redes sociales",
+  "Calendarios editoriales",
+  "Copywriting y tono de marca",
+  "Estrategia digital",
+  "Gestión de comunidad",
   "Atención al detalle",
-  "Trabajo en equipo",
-  "Resolución de problemas",
 ];
 
 const herramientas = [
+  "Instagram & TikTok",
+  "Meta Business Suite & Insights",
+  "CapCut (edición de Reels)",
   "Canva",
-  "Microsoft Office",
-  "Google Workspace",
-  "IA aplicada a eventos y contenido",
+  "Notion",
+  "IA aplicada a redes (ChatGPT, Gemini, NotebookLM)",
+  "Google Workspace & Microsoft Office",
 ];
 
 const idiomas = [
@@ -115,7 +118,7 @@ function Hero() {
             transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="mt-8 max-w-xl text-lg leading-relaxed text-muted-foreground text-pretty sm:text-xl"
           >
-            Estudiante de Organización de Eventos.
+            Community Manager &amp; Social Media. Estudiante de Organización de Eventos en la UP.
           </motion.p>
 
           <motion.div
@@ -136,6 +139,15 @@ function Hero() {
               className="group inline-flex items-center gap-2 rounded-full border border-border bg-background/70 px-6 py-3.5 text-sm font-medium text-foreground backdrop-blur transition-colors hover:bg-secondary"
             >
               Mira mis proyectos
+            </a>
+            <a
+              href="/CV-Catalina-Wauthier.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="group inline-flex items-center gap-2 rounded-full border border-border bg-background/70 px-6 py-3.5 text-sm font-medium text-foreground backdrop-blur transition-colors hover:bg-secondary"
+            >
+              Descargar CV
+              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </a>
           </motion.div>
         </div>
@@ -225,8 +237,7 @@ function Projects() {
           </Reveal>
           <Reveal delay={0.1}>
             <p className="max-w-sm text-base leading-relaxed text-muted-foreground text-pretty">
-              Tres trabajos donde cuidé desde la primera idea hasta el último
-              detalle. Cliqueá para ver el proceso completo.
+              Experiencia real en redes y proyectos estratégicos donde cuidé la identidad visual, el tono y cada detalle. Cliqueá para ver el proceso completo.
             </p>
           </Reveal>
         </div>
@@ -322,14 +333,13 @@ function Profile() {
           </Reveal>
           <Reveal delay={0.1}>
             <p className="mt-8 text-base leading-relaxed text-muted-foreground text-pretty sm:text-lg">
-              ¡Hola! Soy Cata, tengo 19 años y soy de Vedia, provincia de Buenos Aires. Me mudé a la ciudad para estudiar la Licenciatura en Organización de Eventos en la Universidad de Palermo, impulsada por mis ganas de crecer profesionalmente y desarrollar mi creatividad.
+              ¡Hola! Soy Catalina, Community Manager con experiencia en gestión de redes sociales y estudiante de la Licenciatura en Organización de Eventos en la Universidad de Palermo.
               <br />
               <br />
-              Me apasiona la planificación, el diseño y la creación de experiencias que conecten con las personas, tanto en espacios presenciales como en medios digitales. Disfruto pensar propuestas donde la estética, la decoración, la identidad visual y el cuidado de cada detalle transmitan una idea, una emoción o la esencia de una marca.
+              Durante 2025 trabajé llevando el Instagram de Home MM, un emprendimiento de artículos para el hogar, encargándome del calendario editorial, el diseño de piezas en Canva, la edición de Reels en CapCut, el copywriting comercial y la atención diaria a la comunidad.
               <br />
               <br />
-              Me considero una persona organizada, creativa, comprometida y con muchas ganas de aprender. Busco mi primera oportunidad profesional para seguir desarrollándome en proyectos vinculados a la organización, la comunicación, el diseño de experiencias y la creación de contenidos que generen impacto.
-
+              Combino criterio estético, planificación y uso estratégico de herramientas de IA (ChatGPT, Gemini, NotebookLM) para construir marcas coherentes, cercanas y con identidad visual clara en entornos digitales.
             </p>
           </Reveal>
         </div>
