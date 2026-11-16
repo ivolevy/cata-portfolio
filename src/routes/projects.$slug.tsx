@@ -33,7 +33,9 @@ export const Route = createFileRoute("/projects/$slug")({
       <div className="flex min-h-screen items-center justify-center px-6">
         <div className="text-center">
           <p className="font-serif text-2xl italic">Este proyecto no cargó</p>
-          <p className="mt-2 text-sm text-muted-foreground">{error.message}</p>
+          <p className="mt-2 text-sm text-muted-foreground">
+            {error instanceof Error ? error.message : String(error)}
+          </p>
           <button
             onClick={() => {
               router.invalidate();
